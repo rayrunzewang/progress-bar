@@ -1,3 +1,5 @@
+import './styles/main.scss';
+
 const process = $('.process')
 const prevBtn = $('.prev')
 const nextBtn = $('.next')
