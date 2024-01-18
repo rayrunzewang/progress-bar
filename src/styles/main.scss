@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
-$line-border-color: blue;
-$line-border-empty: #e0e0e0;
+@import "./variables";
 
 * {
   margin: 0;
@@ -12,18 +11,19 @@ $line-border-empty: #e0e0e0;
 body {
   background-color: #f6f6fb;
   font-family: "Muli", sans-serif;
+  font-size: 20px;
+  height: 100vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
-  margin: 0;
 
   .container {
     text-align: center;
   }
 
-  .process-container {
+  .progress-container {
     width: 350px;
     max-width: 100%;
     display: flex;
@@ -45,7 +45,7 @@ body {
     }
   }
 
-  .process{
+  .progress-bar{
     background-color: $line-border-color;
     position: absolute;
     top: 50%;
@@ -71,25 +71,27 @@ body {
 
     &.active {
       border: 3px solid $line-border-color;
+      color: $line-border-color;
     }
   }
 
   .btn {
     background-color: $line-border-color;
     color: #fff;
-    padding: 2px 20px;
-    margin: 10px;
-    cursor: pointer;
+    font-size: 20px;
     border: none;
-    border-radius: 2px;
-    box-shadow: 1px 1px 1px rgb(160, 160, 160);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgb(160, 160, 160);
+    padding: 4px 40px;
+    margin: 0 10px;
+    cursor: pointer;
 
     &.disabled {
       cursor: not-allowed;
       background-color: $line-border-empty;
     }
 
-    &:active {
+    &:active:not(.disabled) {
       transform: scale(0.95);
     }
   }
